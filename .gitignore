@@ -1,0 +1,93 @@
+# Unreal Engine generated files
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+Build/
+*.sln
+*.suo
+*.opensdf
+*.sdf
+*.VC.db
+*.VC.opendb
+
+# Visual Studio files
+.vs/
+*.user
+*.VC.*
+*.VC.*
+
+# Compiled Object files
+*.obj
+*.pch
+
+# Compiled Dynamic libraries
+*.dll
+*.lib
+*.a
+*.so
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Debug files
+*.log
+*.idb
+*.pdb
+*.ilk
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Project-specific files
+# *.uproject
+# *.uplugin
+
+# Localization files
+Content/Localizations/
+
+# Plugins
+Plugins/*/Binaries/
+Plugins/*/Intermediate/
+
+# Marketplace files
+Marketplace/
+
+# Asset cache
+AssetRegistryCache/
+
+# Autosave files
+*.autosave
+
+# Crash reports
+CrashReportClient/
+CrashReportClient/*.ini
+CrashReportClient/*.log
+
+# Logs
+Logs/
+*.log
+
+# Backup files
+*.backup
+*.tmp
+
+# Perforce files
+.p4ignore
+.p4config
+
+# JetBrains Rider files
+.idea/
+*.iml
+
+# Visual Studio Code files
+.vscode/
