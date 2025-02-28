@@ -51,6 +51,7 @@ public:
 	bool CanAttack();
 	void Attack();
 	void Hit(int damage);
+	void DieProcess();
 
 	FORCEINLINE USpringArmComponent* GetSringArmComponent() const
 	{
@@ -62,7 +63,7 @@ public:
 	}
 
 protected:
-	void DieProcess();
+	
 
 private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Camera", meta = (AllowPrivateAccess = "true"))

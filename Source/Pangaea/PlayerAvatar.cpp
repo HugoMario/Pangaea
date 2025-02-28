@@ -51,8 +51,18 @@ void APlayerAvatar::BeginPlay()
 void APlayerAvatar::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	UPlayerAvatarAnimInstance* animInstance = Cast<UPlayerAvatarAnimInstance>(GetMesh()->GetAnimInstance());
+	const auto animInstance = Cast<UPlayerAvatarAnimInstance>(GetMesh()->GetAnimInstance());
 	animInstance->Speed = GetCharacterMovement()->Velocity.Size2D();
+
+	if (_AttackCountingDown == AttackInterval)
+	{
+		animInstance->State = EPlayerState::Attack;
+	}
+
+	if (_AttackCountingDown > 0.0f)
+	{
+		_AttackCountingDown -= DeltaTime;
+	}
 }
 
 // Called to bind functionality to input
@@ -64,4 +74,17 @@ void APlayerAvatar::SetupPlayerInputComponent(UInputComponent* PlayerInputCompon
 int APlayerAvatar::GetHealthPoints()
 {
 	return _HealthPoints;
+}
+
+bool APlayerAvatar::CanAttack()
+{
+	UPlayerAvatarAnimInstance* animInst = Cast<UPlayerAvatarAnimInstance>(
+	GetMesh()->GetAnimInstance());
+	return (_AttackCountingDown <= 0.0f &&
+	animInst->State == EPlayerState::Locomotion);
+}
+
+void APlayerAvatar::Attack()
+{
+	_AttackCountingDown = AttackInterval;
 }
